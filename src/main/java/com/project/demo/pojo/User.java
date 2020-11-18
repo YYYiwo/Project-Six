@@ -8,11 +8,50 @@ import java.util.Date;
  * @time 2020/11/17 16:25
  */
 public class User {
+    /**
+     * 用户id
+     */
     private Integer userId;
+
+    /**
+     * 用户名
+     */
     private String userName;
+
+    /**
+     * 用户密码
+     */
     private String userPassword;
+
+    /**
+     * 用户真实名称
+     */
     private String userRealName;
-    private Date userLocalDate;
+
+    /**
+     * 出生日期
+     */
+    private Date userBornDate;
+
+    /**
+     * 性别
+     */
+    private String userGender;
+
+    /**
+     * 身份证
+     */
+    private String userIdentity;
+
+    /**
+     * 电话号码
+     */
+    private String userPhone;
+
+    /**
+     * 邮箱
+     */
+    private String userEmail;
 
     public Integer getUserId() {
         return userId;
@@ -46,22 +85,43 @@ public class User {
         this.userRealName = userRealName;
     }
 
-    public Date getUserLocalDate() {
-        return userLocalDate;
+    public Date getUserBornDate() {
+        return userBornDate;
     }
 
-    public void setUserLocalDate(Date userLocalDate) {
-        this.userLocalDate = userLocalDate;
+    public void setUserBornDate(Date userBornDate) {
+        this.userBornDate = userBornDate;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                ", userRealName='" + userRealName + '\'' +
-                ", userLocalDate=" + userLocalDate +
-                '}';
+    public String getUserGender() {
+        return userGender;
+    }
+
+    public void setUserGender(String userGender) {
+        this.userGender = userGender;
+    }
+
+    public String getUserIdentity() {
+        return userIdentity;
+    }
+
+    public void setUserIdentity(String userIdentity) {
+        this.userIdentity = userIdentity;
+    }
+
+    public String getUserPhone() {
+        return userPhone;
+    }
+
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }
