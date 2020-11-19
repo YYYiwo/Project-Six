@@ -4,73 +4,73 @@ public class Person {
     /*
     个人id
      */
-    private Integer PersonID;
+    private Integer personID;
     /*
     个人名字
      */
-    private String PersonName;
+    private String personName;
     /*
     个人年龄
      */
-    private Integer Personage;
+    private Integer personAge;
     /*
-    个人的国家
+    个人的民族
      */
-    private String PersonNation;
+    private String personNation;
     /*
     个人的地址
      */
-    private String PersonPlace;
+    private String personPlace;
     /*
     个人的出生日期
      */
-    private Integer PersonBorn;
+    private Integer personBorn;
 
     public Integer getPersonID() {
-        return PersonID;
+        return personID;
     }
 
     public void setPersonID(Integer personID) {
-        PersonID = personID;
+        this.personID = personID;
     }
 
     public String getPersonName() {
-        return PersonName;
+        return personName;
     }
 
     public void setPersonName(String personName) {
-        PersonName = personName;
+        this.personName = personName;
     }
 
-    public Integer getPersonage() {
-        return Personage;
+    public Integer getPersonAge() {
+        return personAge;
     }
 
-    public void setPersonage(Integer personage) {
-        Personage = personage;
+    public void setPersonAge(Integer personAge) {
+        this.personAge = personAge;
     }
 
     public String getPersonNation() {
-        return PersonNation;
+        return personNation;
     }
 
     public void setPersonNation(String personNation) {
-        PersonNation = personNation;
+        this.personNation = personNation;
     }
 
     public String getPersonPlace() {
-        return PersonPlace;
+        return personPlace;
     }
 
     public void setPersonPlace(String personPlace) {
-        PersonPlace = personPlace;
+        this.personPlace = personPlace;
     }
 
     public Integer getPersonBorn() {
-        return PersonBorn;
+        return personBorn;
     }
 
     public void setPersonBorn(Integer personBorn) {
-        PersonBorn = personBorn;
+        this.personBorn = personBorn;
     }
 }
