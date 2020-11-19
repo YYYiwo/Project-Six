@@ -12,7 +12,29 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface UserMapper {
-    User save(User user);
 
-    User findById(int id);
+    /**
+     * 添加一个用户
+     * @param user 用户
+     */
+    void saveUser(User user);
+
+    /**
+     * 根据id查找用户
+     * @param id 用户id
+     * @return 用户信息
+     */
+    User findByUserId(int id);
+
+    /**
+     * 根据id删除用户
+     * @param id 用户id
+     */
+    void deleteByUserId(int id);
+
+    /**
+     * 修改用户信息
+     * @param user 用户信息
+     */
+    void updateUser(User user);
 }

@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.demo.mapper.UserMapper">
-    <select id="findById" resultType="com.project.demo.pojo.User">
-        select * from `user` where user_id = #{userId}
+    <select id="findByUserId" resultType="com.project.demo.pojo.User" parameterType="int">
+        select * from `user`
+        where  user_id = #{userId}
     </select>
 
+    <insert id="saveUser" parameterType="com.project.demo.pojo.User">
+        insert into `user`(user_name,user_password,user_realName,user_bornDate,user_gender,user_identity,user_phone,user_email)
+        values (#{userName},#{userPassword},#{userRealName},#{userBornDate},#{userGender},#{userIdentity},#{userPhone},#{userEmail})
+    </insert>
+
+    <update id="updateUser" parameterType="com.project.demo.pojo.User">
+        update `user`
+        <set>
+            <if test="userName != null">user_name = #{userName},</if>
+            <if test="userPassword != null">user_password = #{userPassword},</if>
+            <if test="userRealName != null">user_realName = #{userRealName},</if>
+            <if test="userBornDate != null">user_bornDate = #{userBornDate},</if>
+            <if test="userGender != null">user_gender = #{userGender},</if>
+            <if test="userIdentity != null">user_identity = #{userIdentity},</if>
+            <if test="userPhone != null">user_phone = #{userPhone},</if>
+            <if test="userEmail != null">user_email = #{userEmail},</if>
+        </set>
+        where user_id = #{userId}
+    </update>
+
+    <delete id="deleteByUserId" parameterType="int">
+        delete from `user` where user_id = #{userId}
+    </delete>
 </mapper>

@@ -17,12 +17,23 @@ public class UserServiceImpl implements UserService {
     @Autowired private UserMapper userMapper;
 
     @Override
-    public User register(User user) {
-        return userMapper.save(user);
+    public void register(User user) {
+        userMapper.saveUser(user);
     }
 
     @Override
     public User findById(int id) {
-        return userMapper.findById(id);
+        return userMapper.findByUserId(id);
+    }
+
+    @Override
+    public void delete(int id) {
+        userMapper.deleteByUserId(id);
+        System.out.println("信息删除成功");
+    }
+
+    @Override
+    public void modify(User user) {
+        userMapper.updateUser(user);
     }
 }

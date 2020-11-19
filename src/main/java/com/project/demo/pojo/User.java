@@ -124,4 +124,19 @@ public class User {
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userRealName='" + userRealName + '\'' +
+                ", userBornDate=" + userBornDate +
+                ", userGender='" + userGender + '\'' +
+                ", userIdentity='" + userIdentity + '\'' +
+                ", userPhone='" + userPhone + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                '}';
+    }
 }

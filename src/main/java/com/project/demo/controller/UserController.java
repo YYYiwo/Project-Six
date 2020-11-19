@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
-    @Autowired private UserService service;
-
-    @RequestMapping("/register")
-    public String register(User user){
-        return service.register(user).toString();
-    }
-
-    @RequestMapping("/findUser/{id}")
-    public String findUser(@PathVariable int id){
-        return service.findById(id).toString();
-    }
+//
+//    @Autowired private UserService service;
+//
+//    @RequestMapping("/register")
+//    public String register(User user){
+//        return service.register(user).toString();
+//    }
+//
+//    @RequestMapping("/findUser/{id}")
+//    public String findUser(@PathVariable int id){
+//        return service.findById(id).toString();
+//    }
 }
