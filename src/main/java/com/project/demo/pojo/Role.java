@@ -1,10 +1,18 @@
 package com.project.demo.pojo;
 
+
+import org.apache.ibatis.annotations.Property;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Role {
+
     private int roleId;
     /**
      * 角色ID
      */
+
     private String roleName;
     /**
      * 用户名
@@ -28,8 +36,8 @@ public class Role {
     @Override
     public String toString() {
         return "Role{" +
-                "role_id=" + roleId +
-                ", role_name='" + roleName + '\'' +
+                "roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
                 '}';
     }
 }
