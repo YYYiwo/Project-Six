@@ -5,6 +5,9 @@ package com.project.demo.pojo;
  * @name 王杰
  * @time 2020/11/18 18:00
  */
+
+import java.util.Date;
+
 /**
  *该类用来审核劳模
  */
@@ -30,8 +33,21 @@ public class Model {
      */
     private String modelTreatment;
 
+    /**
+     * 劳模死亡时间
+     */
+    private Date modelDeathDate;
+
     public Integer getModelId() {
         return modelId;
+    }
+
+    public Date getModelDeathDate() {
+        return modelDeathDate;
+    }
+
+    public void setModelDeathDate(Date modelDeathDate) {
+        this.modelDeathDate = modelDeathDate;
     }
 
     public void setModelId(Integer modelId) {
