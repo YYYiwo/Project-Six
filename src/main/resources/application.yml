@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: zhhz1998
+    url: jdbc:mysql://localhost:3306/end?serverTimezone=CTT&useSSL=false&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    mode: HTML5
+    prefix: classpath:/templates
+    suffix: .html
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.project.demo.pojo
+  configuration:
+    map-underscore-to-camel-case: true
