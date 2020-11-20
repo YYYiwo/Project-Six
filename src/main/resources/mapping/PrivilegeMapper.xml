@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.demo.mapper.PrivilegeMapper">
+
+    <insert id="savePrivilege" parameterType="com.project.demo.pojo.Privilege">
+        insert into privilege(privilege_id,privilege_name)
+        values (#{privilegeId},#{privilegeName})
+    </insert>
+    
+    <delete id="deleteByPrivilegeId" parameterType="int">
+        delete from privilege where privilege_id = #{privilegeId}
+    </delete>
+    
+    <select id="findByPrivilegeId" resultType="com.project.demo.pojo.Privilege" parameterType="int">
+        select * from privilege where privilege_id = #{privilegeId}
+    </select>
+
+    <update id="updatePrivilege" parameterType="com.project.demo.pojo.Privilege">
+        update privilege
+        <set>
+            <if test="privilegeName != null">privilege_name = #{privilegeName}</if>
+        </set>
+        where privilege_id = #{privilegeId}
+    </update>
+</mapper>
