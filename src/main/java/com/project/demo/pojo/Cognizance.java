@@ -25,10 +25,6 @@ public class Cognizance {
     /**
      *劳模调动状态
      */
-    private String alive;
-    /**
-     *劳模死亡状态
-     */
 
     public Integer getId() {
         return id;
@@ -78,14 +74,6 @@ public class Cognizance {
         this.call = call;
     }
 
-    public String getAlive() {
-        return alive;
-    }
-
-    public void setAlive(String alive) {
-        this.alive = alive;
-    }
-
     @Override
     public String toString() {
         return "Cognizance{" +
@@ -95,7 +83,6 @@ public class Cognizance {
                 ", attribute='" + attribute + '\'' +
                 ", status='" + status + '\'' +
                 ", call='" + call + '\'' +
-                ", alive='" + alive + '\'' +
                 '}';
     }
 }
