@@ -1,90 +1,88 @@
 package com.project.demo.pojo;
 
 public class Cognizance {
-    private Integer cognizanceId;
+    private Integer id;
     /**
      * 劳模id
      */
-    private String cognizanceHoner;
+    private String honer;
     /**
      *劳模荣誉称号
      */
-    private String cognizanceSort;
+    private String sort;
     /**
      *劳模系统分类
      */
-    private String cognizanceAttribute;
+    private String attribute;
     /**
      *劳模社会属性
      */
-    private String cognizanceStatus;
+    private String status;
     /**
      *劳模认定状态
      **/
-    private String cognizanceCall;
+    private String call;
     /**
      *劳模调动状态
      */
 
-
-    public Integer getCognizanceId() {
-        return cognizanceId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCognizanceId(Integer cognizanceId) {
-        this.cognizanceId = cognizanceId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getCognizanceHoner() {
-        return cognizanceHoner;
+    public String getHoner() {
+        return honer;
     }
 
-    public void setCognizanceHoner(String cognizanceHoner) {
-        this.cognizanceHoner = cognizanceHoner;
+    public void setHoner(String honer) {
+        this.honer = honer;
     }
 
-    public String getCognizanceSort() {
-        return cognizanceSort;
+    public String getSort() {
+        return sort;
     }
 
-    public void setCognizanceSort(String cognizanceSort) {
-        this.cognizanceSort = cognizanceSort;
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 
-    public String getCognizanceAttribute() {
-        return cognizanceAttribute;
+    public String getAttribute() {
+        return attribute;
     }
 
-    public void setCognizanceAttribute(String cognizanceAttribute) {
-        this.cognizanceAttribute = cognizanceAttribute;
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
     }
 
-    public String getCognizanceStatus() {
-        return cognizanceStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setCognizanceStatus(String cognizanceStatus) {
-        this.cognizanceStatus = cognizanceStatus;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public String getCognizanceCall() {
-        return cognizanceCall;
+    public String getCall() {
+        return call;
     }
 
-    public void setCognizanceCall(String cognizanceCall) {
-        this.cognizanceCall = cognizanceCall;
+    public void setCall(String call) {
+        this.call = call;
     }
-
 
     @Override
     public String toString() {
         return "Cognizance{" +
-                "id=" + cognizanceId +
-                ", honer='" + cognizanceHoner + '\'' +
-                ", sort='" + cognizanceSort + '\'' +
-                ", attribute='" + cognizanceAttribute + '\'' +
-                ", status='" + cognizanceStatus + '\'' +
-                ", call='" + cognizanceCall + '\'' +
+                "id=" + id +
+                ", honer='" + honer + '\'' +
+                ", sort='" + sort + '\'' +
+                ", attribute='" + attribute + '\'' +
+                ", status='" + status + '\'' +
+                ", call='" + call + '\'' +
                 '}';
     }
 }
