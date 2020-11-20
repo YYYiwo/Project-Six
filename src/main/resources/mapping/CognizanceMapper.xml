@@ -31,7 +31,7 @@
     </update>
 
     <select id="findById" parameterType="com.project.demo.pojo.Cognizance" resultType="com.project.demo.pojo.Cognizance">
-        SELECT * FROM cognizance WHERE cognizance_id = 1
+        SELECT * FROM cognizance WHERE cognizance_id = #{cognizanceId}
     </select>
 
 </mapper>
