@@ -4,11 +4,21 @@
     <insert id="insert" parameterType="Role">
         insert  into role(role_id,role_name) values(#{roleId},#{roleName})
     </insert>
+
     <select id="findById" resultMap="role">
         select role_id,role_name from role where role_id = #{roleId}
     </select>
+
     <resultMap id="role" type="Role">
         <result property="roleId" column="role_id"/>
         <result property="roleName" column="role_name"/>
     </resultMap>
+
+    <delete id="delete">
+        delete from role where role_id = #{roleId}
+    </delete>
+
+    <update id="modify" parameterType="Role" >
+        update role SET role_name = #{roleName} where role_id = #{roleId}
+    </update>
 </mapper>
