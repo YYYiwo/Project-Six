@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.demo.mapper.ModelMapper">
+    <select id="findByModelId" parameterType="int" resultType="com.project.demo.pojo.Model">
+        select model_id,model_status,model_treatment,model_deathdate from model where model_id = #{modelId}
+    </select>
+    <select id="findByModelStatus" resultType="com.project.demo.pojo.Model">
+        select model_id ,model_status,model_treatment,model_deathdate from model where model_status = #{modelStatus}
+    </select>
+    <select id="findByModelTreatment" resultType="com.project.demo.pojo.Model">
+        select model_id ,model_status,model_treatment,model_deathdate from model where model_treatment = #{modelTreatment}
+    </select>
+    <select id="findAll" resultType="Model">
+        select * from model
+    </select>
+    <insert id="insertModel" parameterType="Model">
+        insert into model(model_id ,model_status,model_treatment,model_deathdate) values (#{modelId},#{modelStatus},#{modelTreatment},#{modelDeathDate})
+    </insert>
+    <update id="edit" parameterType="Model">
+        update Model set model_status = #{modelStatus},model_treatment = #{modelTreatment} ,model_deathdate = #{modelDeathDate} where model_id = #{modelId}
+    </update>
+    <delete id="remove" parameterType="Integer">
+        delete from model where model_id = #{modelId}
+    </delete>
+</mapper>
