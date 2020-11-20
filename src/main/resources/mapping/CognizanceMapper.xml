@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.demo.mapper.CognizanceMapper">
+    <insert id="add" parameterType="com.project.demo.pojo.Cognizance" useGeneratedKeys="true">
+            INSERT INTO cognizance (cognizance_id,
+                                                    cognizance_honer,
+                                                    cognizance_sort,
+                                                    cognizance_attribute,
+                                                    cognizance_status,
+                                                    cognizance_call)
+            VALUES  (#{cognizanceId},
+                           #{cognizanceHoner},
+                           #{cognizanceSort},
+                           #{cognizanceAttribute},
+                           #{cognizanceStatus},
+                           #{cognizanceCall})
+    </insert>
+
+    <delete id="delete" parameterType="com.project.demo.pojo.Cognizance" >
+        DELETE FROM cognizance WHERE cognizance_Id = #{cognizanceId}
+    </delete>
+
+    <update id="update" parameterType="com.project.demo.pojo.Cognizance">
+        UPDATE cognizance
+            SET cognizance_honer = #{cognizanceHoner},
+                   cognizance_sort = #{cognizanceSort},
+                   cognizance_attribute = #{cognizanceAttribute},
+                   cognizance_status = #{cognizanceStatus},
+                   cognizance_call = #{cognizanceCall}
+            WHERE cognizance_id = 2
+    </update>
+
+    <select id="findById" parameterType="com.project.demo.pojo.Cognizance" resultType="com.project.demo.pojo.Cognizance">
+        SELECT * FROM cognizance WHERE cognizance_id = 1
+    </select>
+
+</mapper>
