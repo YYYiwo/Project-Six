@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.demo.mapper.PersonMapper">
+    <insert id="savePerson" parameterType="com.project.demo.pojo.Person" >
+        insert into person(person_id,person_name,person_age,person_nation,person_place,person_born,user_id)
+        values (#{personID},#{personName},#{personAge},#{personNation},#{personPlace},#{personBorn},#{userId})
+    </insert>
+
+    <select id="findByPersonId" parameterType="int" resultType="Person">
+        select person_id,person_name,person_age,person_nation,person_place,person_born,user_id from person where person_id = #{personId}
+    </select>
+
+    <delete id="deleteByPersonId" parameterType="int">
+        delete  from person where person_id = #{personId}
+    </delete>personID
+
+    <update id="updatePerson" parameterType="Person">
+        update  person set person_name=#{personName},person_age=#{personAge},person_nation=#{personNation},person_place=#{personPlace},person_born=#{personBorn},user_id=#{userId} where person_id=#{personID}
+    </update>
+
+</mapper>

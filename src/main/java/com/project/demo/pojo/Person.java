@@ -1,30 +1,42 @@
 package com.project.demo.pojo;
 
+import java.util.Date;
+
 public class Person {
     /*
-    个人id
+    先进个人id
      */
     private Integer personID;
+
     /*
-    个人名字
+    先进个人名字
      */
     private String personName;
+
     /*
-    个人年龄
+    先进个人年龄
      */
     private Integer personAge;
+
     /*
-    个人的民族
+    先进个人的民族
      */
     private String personNation;
+
     /*
-    个人的地址
+    先进个人的地址
      */
     private String personPlace;
+
     /*
-    个人的出生日期
+    先进个人的出生日期
      */
-    private Integer personBorn;
+    private Date personBorn;
+
+    /*
+    用户的id
+     */
+    private Integer userId;
 
     public Integer getPersonID() {
         return personID;
@@ -66,11 +78,32 @@ public class Person {
         this.personPlace = personPlace;
     }
 
-    public Integer getPersonBorn() {
+    public Date getPersonBorn() {
         return personBorn;
     }
 
-    public void setPersonBorn(Integer personBorn) {
+    public void setPersonBorn(Date personBorn) {
         this.personBorn = personBorn;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "personID=" + personID +
+                ", personName='" + personName + '\'' +
+                ", personAge=" + personAge +
+                ", personNation='" + personNation + '\'' +
+                ", personPlace='" + personPlace + '\'' +
+                ", personBorn=" + personBorn +
+                ", userId=" + userId +
+                '}';
     }
 }
