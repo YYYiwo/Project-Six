@@ -12,7 +12,7 @@
 
     <delete id="deleteByPersonId" parameterType="int">
         delete  from person where person_id = #{personId}
-    </delete>personID
+    </delete>
 
     <update id="updatePerson" parameterType="Person">
         update  person set person_name=#{personName},person_age=#{personAge},person_nation=#{personNation},person_place=#{personPlace},person_born=#{personBorn},user_id=#{userId} where person_id=#{personID}

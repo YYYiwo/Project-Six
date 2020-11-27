@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/findAll">
+<th>姓名</th>
+<th>年龄</th>
+<th>民族</th>
+<th>地区</th>
+<th>出生日期</th>
+<th>荣誉称号</th>
+<th>系统分类</th>
+<th>社会属性</th>
+<th>认定状态</th>
+<th>调动状态</th>
+    <tr th:each = "page:${pages}">
+        <td th:text="${page.personName}"></td>
+        <td th:text="${page.personAge}"></td>
+        <td th:text="${page.personNation}"></td>
+        <td th:text="${page.personPlace}"></td>
+        <td th:text="${page.personBorn}"></td>
+        <td th:text="${page.honer}"></td>
+        <td th:text="${page.sort}"></td>
+        <td th:text="${page.attribute}"></td>
+        <td th:text="${page.status}"></td>
+        <td th:text="${page.call}"></td>
+    </tr>
+</form>
+</body>
+</html>

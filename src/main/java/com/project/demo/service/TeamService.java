@@ -40,4 +40,11 @@ public interface TeamService {
      * 查询全部
      */
     List<Team> findAll();
+
+    /**
+     * 根据集体名字查询
+     * @param teamName 集体名
+     * @return 查到的集体信息
+     */
+    Team findByName(String teamName);
 }
