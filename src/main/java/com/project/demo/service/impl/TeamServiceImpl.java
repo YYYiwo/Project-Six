@@ -72,4 +72,9 @@ public class TeamServiceImpl implements TeamService{
     public List<Team> findAll() {
         return teamMapper.findAll();
     }
+
+    @Override
+    public Team findByName(String teamName) {
+        return teamMapper.findByName(teamName);
+    }
 }

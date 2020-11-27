@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.demo.mapper.CognizanceAndPersonMapper">
+
+    <resultMap id="findAllPerson" type="com.project.demo.pojo.CognizanceAndPerson">
+        <result property="personName" column="person_name"/>
+        <result property="personAge" column="person_age"/>
+        <result property="personNation" column="person_nation"/>
+        <result property="personPlace" column="person_place"/>
+        <result property="personBorn" column="person_born"/>
+        <result property="honer" column="cognizance_honer"/>
+        <result property="sort" column="cognizance_sort"/>
+        <result property="attribute" column="cognizance_attribute"/>
+        <result property="status" column="cognizance_status"/>
+        <result property="call" column="cognizance_call"/>
+    </resultMap>
+
+    <sql id="search">
+        <if test="search!=null and search!=''">
+            or person_name like concat('%',#{search},'%')
+            or person_age like concat('%',#{search},'%')
+            or person_nation like concat('%',#{search},'%')
+            or cognizance_honer like concat('%',#{search},'%')
+            or cognizance_sort like concat('%',#{search},'%')
+            or cognizance_attribute like concat('%',#{search},'%')
+            or cognizance_status like concat('%',#{search},'%')
+            or cognizance_call like concat('%',#{search},'%')
+        </if>
+    </sql>
+    
+    <select id="findAll" resultMap="findAllPerson">
+        SELECT p.person_name,p.person_age,p.person_nation,person_place,person_born,
+                c.cognizance_honer,cognizance_sort,cognizance_attribute,c.cognizance_status,cognizance_call
+        from cognizance c
+        LEFT JOIN cognizance_person cp
+        on c.cognizance_id=cp.cognizance_id
+        LEFT JOIN person p
+        on p.person_id=cp.person_id
+        <where>
+            <include refid="search"></include>
+        </where>
+    </select>
+
+</mapper>
