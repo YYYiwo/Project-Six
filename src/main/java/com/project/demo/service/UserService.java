@@ -1,6 +1,9 @@
 package com.project.demo.service;
 
+import com.project.demo.pojo.Cognizance;
+import com.project.demo.pojo.Person;
 import com.project.demo.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author Yiwo
@@ -32,4 +35,36 @@ public interface UserService {
      * @param user 用户
      */
     void modify(User user);
+
+    /**
+     * 修改权限
+     * @param
+     */
+    void modifyPrivilege(Integer userId,Integer roleId);
+    /**
+     * 根据用户名和密码查询
+     * @param userName
+     * @param password
+     * @return
+     */
+    User findByUsernameAndPassword(@Param("userName") String userName , @Param("password") String password);
+    /**
+     * 通过用户名查找改用户的权限
+     * @param userId
+     * @return
+     */
+    Integer findRoleId(Integer userId);
+
+    /**
+     * 修改密码
+     * @param user
+     */
+    void userEditPassword(User user);
+
+    /**
+     * 先进个人申报
+     * @param person
+     * @param cognizance
+     */
+//    void declarePerson(@Param("person")Person person,  @Param("cognizance")Cognizance cognizance);
 }
