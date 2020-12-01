@@ -1,13 +1,17 @@
 package com.project.demo.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.project.demo.mapper.UserMapper;
-import com.project.demo.pojo.Cognizance;
-import com.project.demo.pojo.Person;
-import com.project.demo.pojo.User;
+import com.project.demo.pojo.*;
+
 import com.project.demo.service.PersonService;
+
 import com.project.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 /**
@@ -41,8 +45,14 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+
     public void modifyPrivilege(Integer userId, Integer roleId) {
         userMapper.modifyPrivilege(userId,roleId);
+    }
+
+    @Override
+    public User findByUserName(String userName) {
+        return userMapper.findByUserName(userName);
     }
 
     @Override
@@ -60,5 +70,33 @@ public class UserServiceImpl implements UserService{
         userMapper.modifyPassword(user);
     }
 
+    @Override
+    public void declarePerson(Person person, Cognizance cognizance) {
+
+    }
+
+
+    public List<User> findAll() {
+        return userMapper.findAllUser();
+    }
+
+    @Override
+    public String findRole(int userId) {
+        return userMapper.findRole(userId);
+    }
+
+
+    @Override
+    public void modifyUserRole(UserRole userRole) {
+        userMapper.updateUserRole(userRole);
+    }
+
+    @Override
+    public PageInfo<User> findAllPage(int page, int pageSize){
+        PageHelper.startPage(page,pageSize);
+        List<User> all=userMapper.findAllUser();
+        PageInfo<User> object = new PageInfo<>(all);
+        return object;
+    }
 
 }

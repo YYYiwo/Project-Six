@@ -1,9 +1,14 @@
 package com.project.demo.service;
 
-import com.project.demo.pojo.Cognizance;
-import com.project.demo.pojo.Person;
-import com.project.demo.pojo.User;
+
+import com.project.demo.pojo.*;
 import org.apache.ibatis.annotations.Param;
+
+import com.github.pagehelper.PageInfo;
+import com.project.demo.pojo.User;
+
+import java.util.List;
+
 
 /**
  * @author Yiwo
@@ -36,18 +41,26 @@ public interface UserService {
      */
     void modify(User user);
 
+
     /**
      * 修改权限
      * @param
      */
     void modifyPrivilege(Integer userId,Integer roleId);
+
+    /**
+     * 根据用户账号察整改是否为空
+     * @param userName
+     * @return
+     */
+    User findByUserName(String userName);
     /**
      * 根据用户名和密码查询
      * @param userName
      * @param password
      * @return
      */
-    User findByUsernameAndPassword(@Param("userName") String userName , @Param("password") String password);
+    User findByUsernameAndPassword(String userName,String password);
     /**
      * 通过用户名查找改用户的权限
      * @param userId
@@ -66,5 +79,19 @@ public interface UserService {
      * @param person
      * @param cognizance
      */
-//    void declarePerson(@Param("person")Person person,  @Param("cognizance")Cognizance cognizance);
+//
+    void declarePerson(@Param("person")Person person,  @Param("cognizance")Cognizance cognizance);
+
+    //显示出所有user的信息
+    List<User> findAll();
+
+    //查找用户权限
+    String findRole(int userId);
+
+    //修改user的权限
+    void modifyUserRole(UserRole userRole);
+
+    //分页显示
+    PageInfo<User> findAllPage(int pageNum, int pageSize);
+
 }
