@@ -1,6 +1,9 @@
 package com.project.demo.mapper;
 
+import com.github.pagehelper.PageInfo;
+import com.project.demo.pojo.Role;
 import com.project.demo.pojo.User;
+import com.project.demo.pojo.UserRole;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -41,11 +44,19 @@ public interface UserMapper {
      */
     void updateUser(User user);
 
+
     /**
      * 修改权限
      * @param
      */
     void modifyPrivilege(@Param("userId") Integer userId,@Param("roleId") Integer roleId);
+
+    /**
+     * 根据用户账号查找是否为空
+     * @param userName
+     * @return
+     */
+    User findByUserName(String userName);
 
     /**
      * 根据用户名和密码查询
@@ -71,4 +82,15 @@ public interface UserMapper {
      *
      */
     void modifyPassword(User user);
+
+    //显示所有
+    List<User> findAllUser();
+    //修改权限角色信息
+    void updateUserRole(UserRole userRole);
+
+
+    //查找用户权限名
+    String findRole(int userId);
+
+
 }
